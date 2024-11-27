@@ -135,6 +135,16 @@ public class MyArrayList<E> implements IList<E> {
         return tmp;
     }
 
+
+    //O(n)
+    @Override
+    public void clear(){
+        for (int i = 0; i < size; i++) {
+            elements[i] = null;
+        }
+        size = 0;
+    }
+
     private Predicate<E> getPredicate(Object o) {
         return (E currElement) -> ((o != null && o.equals(currElement))
                 || (o == null && o == currElement));
